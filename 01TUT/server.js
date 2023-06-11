@@ -34,12 +34,21 @@ fileSystem.readFile(path.join(__dirname,'files','erick.txt'),'utf-8', (error,dat
 fileSystem.writeFile(path.join(__dirname,'files','jackpot.txt'),'I am called jackpot in the forex market',error =>{
     if(error) throw error;
     console.log('Write file complted !!!');
+
+    fileSystem.appendFile(path.join(__dirname,'files','jackpot.txt'),`\n \n Ohkay so you the guy who sold Bitcoin!!!!`,error =>{
+        if(error) throw error;
+        console.log('Finished');
+
+
+        fileSystem.rename(path.join(__dirname,'files','jackpot.txt'),
+        path.join(__dirname,'files','Elnino.txt'), error =>{
+            if(error) throw error;
+            console.log('file was changed');
+        });
+    });
 });
 
-fileSystem.appendFile(path.join(__dirname,'files','Regex.txt'),'We can use regular expression',error =>{
-    if(error) throw error;
-    console.log('append complted !!!');
-});
+
 
 process.on('uncaughtException', err =>{
     console.error(`There was an error while trying to read your file ${err}`)
