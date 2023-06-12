@@ -11,5 +11,8 @@
     "NodeJs"
   ],
   "author": "Eriik_Elnino",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
